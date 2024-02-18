@@ -1,3 +1,3 @@
-Command ```run``` -> [localhost:8888](https://localhost:8888/) -> Insert image url -> Convert.
+Command ```run``` -> [localhost:8888](http://localhost:8888/) -> Insert image url -> Convert.
 
 ![img](img.png)
