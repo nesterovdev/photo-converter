@@ -22,7 +22,7 @@ async function submit() {
     document.getElementById("txtimg").innerHTML = txtImgCleaned;
     succ("Done!");
   } catch (e) {
-    error("Unable to convert the image")
+    error("Unable to convert the image.")
   }
 }
 

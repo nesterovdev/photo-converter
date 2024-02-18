@@ -20,7 +20,7 @@ public class GServer {
 
     public GServer(TextGraphicsConverter converter) throws Exception {
         if (converter == null) {
-            throw new IllegalArgumentException("Converter can't be null");
+            throw new IllegalArgumentException("Converter can't be null!");
         }
         this.converter = converter;
         this.converter.setMaxHeight(Converter.HEIGHT_CEILING);
@@ -33,8 +33,7 @@ public class GServer {
     }
 
     public void start() {
-        System.out.println("Порт: " + PORT);
-        System.out.println("Браузер: http://localhost:8888/");
+        System.out.println("App is running. Go -> http://localhost:8888/.");
         server.start();
     }
 
@@ -51,7 +50,7 @@ public class GServer {
     }
 
     protected void serveConversion(HttpExchange h) throws IOException {
-        System.out.println("Convert request..");
+        System.out.println("Convert request...");
         var url = new BufferedReader(new InputStreamReader(h.getRequestBody())).readLine();
         try {
             System.out.println("Converting image: " + url);
@@ -63,7 +62,7 @@ public class GServer {
             e.printStackTrace();
             var msg = e.getMessage();
             if (msg.isEmpty()) {
-                msg = "Conversion error";
+                msg = "Conversion error, try again!";
             }
             var msgBytes = msg.getBytes();
             h.sendResponseHeaders(500, msgBytes.length);
